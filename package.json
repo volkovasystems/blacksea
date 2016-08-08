@@ -1,0 +1,30 @@
+{
+  "name": "blacksea",
+  "version": "0.0.0",
+  "description": "Pool of uncaught exception handlers.",
+  "main": "blacksea.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkovasystems/blacksea.git"
+  },
+  "keywords": [
+    "uncaughtException",
+    "handler",
+    "pool",
+    "blacksea"
+  ],
+  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/volkovasystems/blacksea/issues"
+  },
+  "homepage": "https://github.com/volkovasystems/blacksea#readme",
+  "dependencies": {
+    "called": "0.0.5",
+    "harden": "^0.3.2",
+    "snapd": "0.0.1"
+  }
+}
