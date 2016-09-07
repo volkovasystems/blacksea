@@ -1,6 +1,6 @@
 {
   "name": "blacksea",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Pool of uncaught exception handlers.",
   "main": "blacksea.js",
   "scripts": {
@@ -23,9 +23,9 @@
   },
   "homepage": "https://github.com/volkovasystems/blacksea#readme",
   "dependencies": {
-    "called": "0.0.5",
-    "exorcise": "0.0.0",
-    "harden": "^0.3.2",
-    "snapd": "0.0.1"
+    "called": "^0.1.2",
+    "exorcise": "0.0.1",
+    "harden": "^0.3.5",
+    "snapd": "0.0.5"
   }
 }
