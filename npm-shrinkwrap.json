@@ -1,0 +1,64 @@
+{
+  "name": "blacksea",
+  "version": "0.0.4",
+  "dependencies": {
+    "called": {
+      "version": "0.1.2",
+      "from": "called@latest",
+      "dependencies": {
+        "ate": {
+          "version": "0.0.0",
+          "from": "ate@0.0.0"
+        },
+        "raze": {
+          "version": "0.0.8",
+          "from": "raze@0.0.8"
+        },
+        "zelf": {
+          "version": "0.0.4",
+          "from": "zelf@0.0.4",
+          "dependencies": {
+            "asea": {
+              "version": "0.1.2",
+              "from": "asea@>=0.1.2 <0.2.0"
+            }
+          }
+        }
+      }
+    },
+    "exorcise": {
+      "version": "0.0.2",
+      "from": "exorcise@latest"
+    },
+    "harden": {
+      "version": "0.3.5",
+      "from": "harden@latest"
+    },
+    "snapd": {
+      "version": "0.1.0",
+      "from": "snapd@latest",
+      "dependencies": {
+        "asea": {
+          "version": "0.1.2",
+          "from": "asea@>=0.1.2 <0.2.0",
+          "resolved": "https://registry.npmjs.org/asea/-/asea-0.1.2.tgz"
+        },
+        "budge": {
+          "version": "0.0.1",
+          "from": "budge@0.0.1",
+          "dependencies": {
+            "raze": {
+              "version": "0.0.8",
+              "from": "raze@0.0.8"
+            }
+          }
+        },
+        "zelf": {
+          "version": "0.0.4",
+          "from": "zelf@0.0.4",
+          "resolved": "https://registry.npmjs.org/zelf/-/zelf-0.0.4.tgz"
+        }
+      }
+    }
+  }
+}
