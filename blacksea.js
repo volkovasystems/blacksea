@@ -34,6 +34,9 @@
 			"file": "blacksea.js",
 			"module": "blacksea",
 			"author": "Richeve S. Bebedor",
+			"contributors": [
+				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+			],
 			"eMail": "richeve.bebedor@gmail.com",
 			"repository": "https://github.com/volkovasystems/blacksea.git",
 			"test": "blacksea-test.js",
@@ -53,17 +56,19 @@
 			"called": "called",
 			"exorcise": "exorcise",
 			"harden": "harden",
+			"protype": "protype",
 			"snapd": "snapd"
 		}
 	@end-include
 */
 
-var called = require( "called" );
-var exorcise = require( "exorcise" );
-var harden = require( "harden" );
-var snapd = require( "snapd" );
+const called = require( "called" );
+const exorcise = require( "exorcise" );
+const harden = require( "harden" );
+const protype = require( "protype" );
+const snapd = require( "snapd" );
 
-var blacksea = function blacksea( logEngine ){
+const blacksea = function blacksea( logEngine ){
 	/*;
 		@meta-configuration:
 			{
@@ -72,7 +77,7 @@ var blacksea = function blacksea( logEngine ){
 		@end-meta-configuration
 	*/
 
-	if( typeof logEngine == "object" ){
+	if( protype( logEngine, OBJECT ) ){
 		logEngine = logEngine.constructor;
 	}
 

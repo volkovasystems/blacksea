@@ -1,6 +1,6 @@
 {
   "name": "blacksea",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Pool of uncaught exception handlers.",
   "main": "blacksea.js",
   "scripts": {
@@ -17,15 +17,19 @@
     "blacksea"
   ],
   "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+  "contributors": [
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/volkovasystems/blacksea/issues"
   },
   "homepage": "https://github.com/volkovasystems/blacksea#readme",
   "dependencies": {
-    "called": "^0.1.2",
-    "exorcise": "0.0.2",
-    "harden": "^0.3.5",
-    "snapd": "^0.1.0"
+    "called": "^0.4.0",
+    "exorcise": "^0.1.0",
+    "harden": "^0.9.0",
+    "protype": "^0.4.0",
+    "snapd": "^0.3.0"
   }
 }
