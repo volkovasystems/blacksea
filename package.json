@@ -1,10 +1,10 @@
 {
   "name": "blacksea",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Pool of uncaught exception handlers.",
   "main": "blacksea.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha blacksea-test.js"
   },
   "repository": {
     "type": "git",
@@ -26,10 +26,10 @@
   },
   "homepage": "https://github.com/volkovasystems/blacksea#readme",
   "dependencies": {
-    "called": "^0.4.0",
-    "exorcise": "^0.1.0",
-    "harden": "^0.10.0",
-    "protype": "^0.4.0",
-    "snapd": "^0.4.0"
+    "called": "^0.5.0",
+    "exorcise": "^0.2.0",
+    "harden": "^0.12.0",
+    "protype": "^0.7.0",
+    "snapd": "^0.5.0"
   }
 }
