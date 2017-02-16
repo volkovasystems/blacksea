@@ -1,5 +1,6 @@
-"use strict";
+
+require( "olivant" );
 
 const blacksea = require( "./blacksea.js" );
 
-blacksea( { } );
+blacksea( Fatal );

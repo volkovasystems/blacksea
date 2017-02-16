@@ -53,8 +53,9 @@
 
 	@include:
 		{
-			"called": "called",
+			"clazof": "clazof",
 			"exorcise": "exorcise",
+			"falzy": "falzy",
 			"harden": "harden",
 			"protype": "protype",
 			"snapd": "snapd"
@@ -62,53 +63,26 @@
 	@end-include
 */
 
-const called = require( "called" );
+const clazof = require( "clazof" );
 const exorcise = require( "exorcise" );
+const falzy = require( "falzy" );
 const harden = require( "harden" );
 const protype = require( "protype" );
 const snapd = require( "snapd" );
 
-const blacksea = function blacksea( logEngine ){
+const handler = function handler( logEngine ){
 	/*;
 		@meta-configuration:
 			{
-				"logEngine:required": "Olivant"
+				"logEngine:required": Olivant
 			}
 		@end-meta-configuration
 	*/
 
-	if( protype( logEngine, OBJECT ) ){
-		logEngine = logEngine.constructor;
-	}
-
-	if( !logEngine.prototype.parent ){
-		throw new Error( "invalid log engine" );
-	}
-
-	if( logEngine.prototype.parent.name != "Olivant" ){
-		throw new Error( "invalid log engine" );
-	}
-
-	if( blacksea.pool.length == 0 ){
-		while( blacksea.pool.length != 5 ){
-			blacksea.pool.push( blacksea.handler( logEngine ) );
-		}
-
-		while( blacksea.pool.length != 1 ){
-			process.once( "uncaughtException", blacksea.pool.pop( ) );
-		}
-	}
-
-	return logEngine;
-};
-
-harden( "pool", blacksea.pool || [ ], blacksea );
-
-harden( "handler", blacksea.handler || function handler( logEngine ){
 	return ( function onUncaughtException( ){
 		snapd( function pushPool( ){
 			if( blacksea.pool.length < 5 ){
-				blacksea.pool.push( blacksea.handler( logEngine ) );
+				blacksea.pool.push( handler( logEngine ) );
 			}
 
 		} )( function registerHandler( ){
@@ -120,7 +94,39 @@ harden( "handler", blacksea.handler || function handler( logEngine ){
 			.report( )
 			.prompt( );
 	} );
-}, blacksea );
+};
+
+const blacksea = function blacksea( logEngine ){
+	/*;
+		@meta-configuration:
+			{
+				"logEngine:required": Olivant
+			}
+		@end-meta-configuration
+	*/
+
+	if( falzy( logEngine ) || !clazof( logEngine, "Olivant" ) ){
+		throw new Error( "invalid log engine" );
+	}
+
+	if( protype( logEngine, OBJECT ) ){
+		logEngine = logEngine.constructor;
+	}
+
+	if( blacksea.pool.length == 0 ){
+		while( blacksea.pool.length != 5 ){
+			blacksea.pool.push( handler( logEngine ) );
+		}
+
+		while( blacksea.pool.length != 1 ){
+			process.once( "uncaughtException", blacksea.pool.pop( ) );
+		}
+	}
+
+	return logEngine;
+};
+
+harden( "pool", blacksea.pool || [ ], blacksea );
 
 exorcise( function drain( ){
 	process.removeAllListeners( "uncaughtException" );
