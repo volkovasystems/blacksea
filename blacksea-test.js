@@ -1,7 +1,9 @@
 "use strict";
 
 require( "olivant" );
-
+const assert = require( "assert" );
 const blacksea = require( "./blacksea.js" );
 
-blacksea( Fatal );
+assert.ok( blacksea( Fatal ) );
+
+console.log( "ok" );
